@@ -3,7 +3,7 @@
 const pipe = (...fns) => {
     for (const fn of fns) {
         if (typeof fn !== 'function') {
-            throw new Error(`Очікування функції отримано ${typeof fn}`);
+            throw new Error(`Очікування функції, отримано ${typeof fn}`);
         }
     }
     return (x) => fns.reduce((v, f) => f(v), x);
