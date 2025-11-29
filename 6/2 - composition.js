@@ -26,24 +26,24 @@ const exclaim = str => str + '!';
 
 
 const dangerousFn = str => {
-    if (str.length < 5) throw new Error("Слишком короткая строка!");
+    if (str.length < 5) throw new Error("доже короткий рядок!");
     return str + " (ok)";
 };
 
 
 const safeFlow = compose(exclaim, toUpper);
 
-console.log("--- Тест 1: Успех ---");
+console.log("--- Тест 1: Успіх ---");
 console.log(safeFlow("hello"));
 
 const riskyFlow = compose(exclaim, toUpper, dangerousFn);
 
 
 riskyFlow.on('error', (e) => {
-    console.log(`[LOG] Поймана ошибка: ${e.message}`);
+    console.log(`[LOG] Піймана помилка: ${e.message}`);
 });
 
-console.log("\n--- Тест 2: Ошибка ---");
+console.log("\n--- Тест 2: Помилка ---");
 const res = riskyFlow("hi");
 
-console.log("Результат вызова:", res);
+console.log("Результат виклика:", res);

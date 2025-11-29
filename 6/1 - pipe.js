@@ -3,7 +3,7 @@
 const pipe = (...fns) => {
     for (const fn of fns) {
         if (typeof fn !== 'function') {
-            throw new Error(`Ожидалась функция, получен ${typeof fn}`);
+            throw new Error(`Очікування функції отримано ${typeof fn}`);
         }
     }
     return (x) => fns.reduce((v, f) => f(v), x);
@@ -31,9 +31,9 @@ try {
 }
 
 try {
-    console.log('Попытка создать сломанный pipe...');
+    console.log('Спроба створити зламаний pipe...');
     const f3 = pipe(inc, 7, cube);
-    console.log('Это сообщение не должно появиться');
+    console.log('Це повідомлення не повинно зявитись');
 } catch (e) {
-    console.log('Поймана ошибка:', e.message);
+    console.log('Піймана помилка:', e.message);
 }
