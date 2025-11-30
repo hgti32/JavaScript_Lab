@@ -40,10 +40,10 @@ const riskyFlow = compose(exclaim, toUpper, dangerousFn);
 
 
 riskyFlow.on('error', (e) => {
-    console.log(`[LOG] Піймана помилка: ${e.message}`);
+    console.log(`[LOG] Виявлена помилка: ${e.message}`);
 });
 
 console.log("\n--- Тест 2: Помилка ---");
 const res = riskyFlow("hi");
 
-console.log("Результат виклика:", res);
+console.log("Результат виклику:", res);

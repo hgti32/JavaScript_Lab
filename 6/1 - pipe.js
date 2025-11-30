@@ -35,5 +35,5 @@ try {
     const f3 = pipe(inc, 7, cube);
     console.log('Це повідомлення не повинно зявитись');
 } catch (e) {
-    console.log('Піймана помилка:', e.message);
+    console.log('Виявлена помилка:', e.message);
 }
